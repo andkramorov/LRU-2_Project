@@ -12,8 +12,10 @@ int hash_funk(int page, int size) {
 struct HashTab *create_hashtab( int size) {
     assert(size > 0);
     struct HashTab *hashtab = calloc(1, sizeof(struct HashTab));
+    assert(hashtab);
     struct List *head = NULL;
     hashtab->table = calloc(size, sizeof(struct List));
+    assert(hashtab->table);
     for (int i = 0; i < size; ++i) {
         hashtab->table[i] = head;
     }
