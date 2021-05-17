@@ -19,7 +19,7 @@ struct HashTab {
  */
 struct Exist {
     short int True;                 /**< a sign of existence*/
-    int *value;                     /**< an adress*/
+    struct node *value;                     /**< an adress*/
 };
 
 
@@ -44,7 +44,7 @@ void free_hashtab(struct HashTab *hashtab);
  * @param page a page of data
  * @return an adress
  */
-int *get_value(struct HashTab *hashtab, int page);
+struct node *get_value(struct HashTab *hashtab, int page);
 
 
 /**
@@ -53,7 +53,7 @@ int *get_value(struct HashTab *hashtab, int page);
  * @param page a page of data
  * @param value an adress
  */
-void add_value(struct HashTab *hashtab, int page, int* value);
+void add_value(struct HashTab *hashtab, int page, struct node * value);
 
 /**
  * Deleting the page in the hash table
