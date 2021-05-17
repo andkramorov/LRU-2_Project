@@ -48,14 +48,14 @@ void print_hashtab(struct HashTab *hashtab) {
 
 
 
-void add_value(struct HashTab *hashtab, int page, int *value) {
+void add_value(struct HashTab *hashtab, int page, struct node *value) {
     assert(hashtab != NULL);
     int hash = hash_funk(page, hashtab->size);
     set_list(&(hashtab->table[hash]), page, value);
 }
 
 
-int *get_value(struct HashTab *hashtab, int page) {
+struct node *get_value(struct HashTab *hashtab, int page) {
 
     assert(hashtab != NULL);
     struct Exist Need;
