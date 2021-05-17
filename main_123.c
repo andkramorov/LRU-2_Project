@@ -760,14 +760,20 @@ int main() {
             // does not exist in the table
             if (counter != max_tree_size) {
                 address = tree_insert(t, 0);
+                address->address = 0;
+                address->hist1 = i;
+                address->key = element;
+                address->last = i;
                 add_value(hashtab, element, address);
                 // need to add element to the buffer
                 counter++;
+                check = exist_in_list(hashtab->table[hash], element);
             }
             else {
                 // to do smth later
             }
         }
+
         if(check.value->address == 0) {
             if(buffer_counter == size) {
                 // to be continued
@@ -785,10 +791,6 @@ int main() {
                 assert(data);
                 check.value->address = data;
                 buffer_counter++;
-                check.value->hist1 = i;
-                check.value->last = i;
-                check.value->value = 0;
-                check.value->key = element;
             }
         }
         // element is already in buffer
@@ -803,7 +805,6 @@ int main() {
             else
                 check.value->last = i;
         }
-         printf("%d", hits);
     }
     free_hashtab(hashtab);
     tree_destroy(t);
