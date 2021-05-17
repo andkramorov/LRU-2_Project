@@ -1,5 +1,5 @@
-#include "LRU/K_hash.h"
-
+#include "LRU2_hash.h"
+#include "List_for_hash.h"
 
 int hash_funk(int page, int size) {
     assert(size > 0);
