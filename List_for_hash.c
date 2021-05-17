@@ -1,6 +1,6 @@
 #include "List_for_hash.h"
 
-void set_list(struct List **head, int page, int *value) {
+void set_list(struct List **head, int page, struct node *value) {
     assert(value != NULL);
     struct List *temp = malloc(1 * sizeof(struct List));
     assert(temp);
