@@ -12,7 +12,7 @@
  */
 struct List {
     int page;                       /**< a page of data */
-    int *value;                     /**< an adress of data. */
+    struct node *value;                     /**< an adress of data. */
     struct List *next;              /**<  a pointer to the next element of the list*/
 };
 
@@ -21,7 +21,7 @@ struct List {
  */
 struct Exist {
     short int True;                 /**< a sign of existence*/
-    int *value;                     /**< an adress*/
+    struct node *value;                     /**< an adress*/
 }
 
 /**
@@ -41,7 +41,7 @@ void print_list(struct List *head);
  * @param page a page of data which we add to the list
  * @param value  an adress of data
  */
-void set_list(struct List **head, int page, int *value);
+void set_list(struct List **head, int page, struct node *value);
 
 /**
  * Deleting the element in the list
